@@ -19,6 +19,13 @@ bool valid(vi vec, int cust) {
     return true;
 }
 
+int find(vi vec, int jumps) {
+    if (valid(vec, jumps))
+        return jumps;
+    else
+        return find(vec, ++jumps);
+}
+
 int more(vi vec) {
     int def = vec[0];
     for (int i = 0; i < vec.size() - 1; ++i) {
@@ -26,13 +33,6 @@ int more(vi vec) {
             def = abs(vec[i] - vec[i + 1]);
     }
     return def;
-}
-
-int find(vi vec, int jumps) {
-    if (valid(vec, jumps))
-        return jumps;
-    else
-        return find(vec, ++jumps);
 }
 
 int main() {
