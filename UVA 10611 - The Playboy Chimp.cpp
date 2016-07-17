@@ -53,9 +53,11 @@ int main() {
     int n, aux;
     cin >> n;
     vi f, m;
-    for (int i = 0; i < n; ++i) {
+    cin >> aux;
+    f.push_back(aux);
+    for (int i = 1; i < n; ++i) {
         cin >> aux;
-        if (f.last() != aux)
+        if (f.back() != aux)
             f.push_back(aux);
     }
     cin >> n;
